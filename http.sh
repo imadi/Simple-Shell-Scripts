@@ -17,3 +17,5 @@ HTTP_STATUS=$(echo $HTTP_RESPONSE | tr -d '\n' | sed -E 's/.*HTTPSTATUS:([0-9]{3
 echo "$HTTP_BODY"
 
 echo "[HTTP status: $HTTP_STATUS]"
+
+curl -s -o /dev/null -I -w "%{http_code}" http://www.google.com
